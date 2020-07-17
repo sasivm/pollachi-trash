@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cursor {
+    cursor: pointer;
+}
+
+#cardtitle {
+    font-size: large;
+}
+
+#login-card, #phone-otp-card, #otp-verify-card, .card-box-shadow {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28) !important;
+}
+
+.err-msg {
+    font-weight: 500;
+}
+

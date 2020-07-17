@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <div class="row m-2">
+
+        <div class="col-4 p-2" *ngFor="let item of trashList">
+            <div id="trash_{{item.name}}" class="column card-box-shadow">
+
+                <div class="card-body"> {{item.icon}} </div>
+
+                <div class="card-footer">
+                    <span> {{item.name}} </span>
+                    <hr>
+                    <span> {{item.price}} </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row float-right">
+        <button mat-fab (click)="navigateSellTrash()">
+            <mat-icon> home </mat-icon>
+        </button>
+    </div>
+
+</div>

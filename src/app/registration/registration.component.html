@@ -1,0 +1,87 @@
+<div class="container">
+
+    <div class="card mt-2">
+        <div class="card-header card-title">
+            <button mat-flat-button (click)="returnBack()">
+                <mat-icon mat-list-icon> navigate_before </mat-icon>
+            </button>
+            <strong> Sell Trash </strong>
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="contactForm">
+                <div>
+                    <div>
+                        <mat-icon mat-list-icon> person </mat-icon>
+                        <mat-form-field class="field-width ml-4" appearance="outline">
+                            <mat-label> Enter Name </mat-label>
+                            <input matInput type="text" id="name" formControlName="name">
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-icon mat-list-icon> local_phone </mat-icon>
+                        <mat-form-field class="field-width ml-4" appearance="outline">
+                            <mat-label> Enter Mobile </mat-label>
+                            <input matInput type="tel" id="mobile" formControlName="mobile">
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-icon mat-list-icon> mail </mat-icon>
+                        <mat-form-field class="field-width ml-4" appearance="outline">
+                            <mat-label> Enter Mail </mat-label>
+                            <input matInput type="text" id="mail" formControlName="mail">
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-icon mat-list-icon> location_on </mat-icon>
+                        <mat-form-field class="field-width ml-4" appearance="outline">
+                            <mat-label> Enter Address </mat-label>
+                            <textarea matInput type="text" id="address" formControlName="address"> </textarea>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label> Pickup Date </mat-label>
+                                <input matInput type="date" id="pickupDate" formControlName="pickupDate">
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label> Pickup Time </mat-label>
+                                <input matInput type="time" id="pickupTime" formControlName="pickupTime">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <button mat-flat-button id="submitBtn" [disabled]="footerClass.includes('alert-secondary')"
+                    color="primary" (click)="submitForm()"> Submit </button>
+                <button mat-flat-button id="resetBtn" class="ml-4" color="warn" (click)="resetForm()"> Reset
+                </button>
+
+            </form>
+        </div>
+
+        <div id="footrForm" class="card-footer text-muted">
+            <div *ngFor="let message of errorMsgList">
+                <span class="{{footerClass}}"> {{message}} </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- 
+<div class="form-group row">
+    <label for="address" class="col-3 label"> Address: </label>
+    <div class="col-8">
+        <textarea class="form-control" id="address" formControlName="address"> </textarea>
+    </div>
+</div> -->

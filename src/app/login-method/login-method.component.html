@@ -1,0 +1,102 @@
+<!-- <div class="container">
+    <title class="text-center"> Welcome to Pollachi-trash </title>
+
+    <div id="login-card" class="card m-5">
+        <div id="cardtitle" class="card-header text-center p-4">
+            Select login method
+        </div>
+
+        <div class="text-center m-4">
+            <ul class="list-group list-group-flush">
+                <button mat-stroked-button color="primary" class="button-border"> Continue with Google </button>
+                <button mat-stroked-button color="primary" class="button-border"> Continue with Phone Number </button>
+                <li class="list-group-item cursor" (click)="logginWithGoogle()"> Continue with Google </li>
+                <li class="list-group-item cursor"> <a routerLink="/phone"> Continue with Phone Number </a> </li>
+                <li class="list-group-item cursor" data-toggle="modal" data-target="#containerName"> Skip </li>
+            </ul>
+        </div>
+
+        <div *ngIf="errorState" class="card-footer alert alert-danger text-center">
+            <span class="err-msg"> {{errorMessage}} </span>
+        </div>
+
+        <ng-template #containerName class="modal" role="dialog">
+
+            <mat-form-field class="field-width ml-4" appearance="outline">
+                <mat-label> Enter Name </mat-label>
+                <input matInput type="text" id="name" [(ngModel)]="customerName">
+            </mat-form-field>
+
+            <div *ngIf="containerNameError" class="alert alert-danger">
+                <span> Please enter valid name </span>
+            </div>
+
+            <br>
+
+            <button mat-flat-button (click)="verifyUser()"></button>
+
+        </ng-template>
+    </div>
+</div> -->
+
+
+
+<div class="container mt-4">
+
+    <div *ngIf="!isUserAnnonymus; else annonymusLogin" class="card row p-5 m-4">
+        <div class="row list-group-item p-3" (click)="logginWithGoogle()"> Continue with Google <span
+                class="float-right">
+                <mat-icon> navigate_after </mat-icon>
+            </span> </div>
+        <div class="row list-group-item p-3" (click)="logginWithPhone()"> Continue with Phone Number <span
+                class="float-right">
+                <mat-icon> navigate_after </mat-icon>
+            </span> </div>
+        <br />
+
+        <div *ngIf="errorState" class="row card-footer alert alert-danger text-center">
+            <span> {{errorMessage}} </span>
+        </div>
+
+        <br>
+
+
+        <button mat-flat-button color="primary" (click)="isUserAnnonymus = true;">
+            Skip to continue
+        </button>
+    </div>
+
+    <ng-template #annonymusLogin>
+        <div class="card row p-5 m-4">
+            <P> <strong> Enter Name to continue </strong></P>
+
+            <mat-form-field class="ml-4" appearance="standard">
+                <mat-label> Enter Name </mat-label>
+                <input matInput type="text" id="name" [(ngModel)]="customerName">
+            </mat-form-field>
+            <br>
+
+            <div *ngIf="containerNameError" class="alert alert-danger">
+                <span> Please enter valid name </span>
+            </div>
+            <br>
+
+            <button mat-flat-button color="primary" (click)="verifyUser()"> Continue </button>
+        </div>
+    </ng-template>
+
+    <!-- <div class="row">
+    <div class="col bg-dark">
+        <div class="custom-card card-top">
+            Google
+        </div>
+        <div class="gradirnt-btn card-bottom"> Continue </div>
+    </div>
+    <div class="col">
+        <div class="custom-card card-top">
+            Phone Number
+        </div>
+        <div class="gradirnt-btn card-bottom"> Continue </div>
+    </div>
+</div> -->
+</div>

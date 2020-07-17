@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="card card-box-shadow rounded m-3">
+
+        <div class="row" style="min-height: 200px">
+
+            <div *ngIf="anonymousUser" class="row">
+                <span> <strong> You're not a registerd user </strong> </span>
+            </div>
+
+            <div class="col">
+                <div class="media pt-5 pl-3">
+                    <img class="align-self-start mr-5 img-thumbnail rounded-circle" style="width: 25%;"
+                        src="{{emptyThumbnail}}" alt="img not found">
+                    <div class="media-body">
+                        <p> Name : <strong> {{profileInfo?.displayName}} </strong> </p>
+                        <p> Mobile : <strong> {{profileInfo?.phoneNumber}} </strong> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

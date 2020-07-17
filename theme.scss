@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$candy-app-primary: mat-palette(#00308F);
+$candy-app-secondary: mat-palette(rgb(236, 15, 15));
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-warn:    mat-palette($mat-red);
+
+$candy-app-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    secondary: $candy-app-secondary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,  
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);

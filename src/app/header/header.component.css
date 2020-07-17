@@ -1,0 +1,19 @@
+.sidenav-container {
+    height: 100%;
+    background: transparent;  
+    /* do not change background, it will reflect body background-color */
+  }
+  
+  .sidenav {
+    width: 50%;
+    background-color: #fff;
+  }
+
+  mat-nav-list mat-list-item {
+    color: #000;
+  }
+
+  mat-nav-list :hover {
+    color: orange;
+  }
+

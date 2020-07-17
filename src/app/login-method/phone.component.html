@@ -1,0 +1,22 @@
+<div id="phone-otp-card" class="card m-5">
+
+    <div id="cardtitle" class="card-header text-center p-4">
+        Enter Phone Number to Verify
+    </div>
+
+    <div class="text-center m-4">
+        <mat-form-field appearance="standard">
+            <mat-label> Enter Mobile Number </mat-label>
+            <input matInput id="phoneNumber" [(ngModel)]="phoneNumber" autofocus> 
+            <mat-icon matSuffix> phone </mat-icon>
+        </mat-form-field>
+        <button mat-flat-button (click)="sendOTPCode()" class="ml-4" color="primary"> Send OTP </button>
+    </div>
+
+    <div *ngIf="errorState" class="card-footer alert alert-danger text-center">
+        <span class="err-msg"> {{errorMessage}} </span>
+    </div>
+
+</div>
+
+<div id="recaptcha-container"></div>

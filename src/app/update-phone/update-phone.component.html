@@ -1,0 +1,39 @@
+<div id="phone-update-card" class="card m-5">
+
+    <div id="cardtitle" class="card-header text-center p-4"> Please select login method </div>
+
+    <div class="text-center m-4">
+
+        <form [formGroup]="phoneUpdate">
+
+            <mat-form-field appearance="standard">
+                <mat-label> Enter Mobile Number </mat-label>
+                <input matInput id="phoneNumber" formControlName="phoneNumber">
+                <mat-icon matSuffix> phone </mat-icon>
+            </mat-form-field>
+
+            <button mat-flat-button [disabled]="phonumberState" (click)="sendOTPCode()" class="ml-4" color="primary">
+                Send OTP </button>
+
+            <div *ngIf="phonumberState">
+                <mat-form-field appearance="standard">
+                    <mat-label> Enter Confirm Code </mat-label>
+                    <input matInput id="confirmCode" formControlName="confirmCode">
+                    <mat-icon matSuffix> phone </mat-icon>
+                </mat-form-field>
+
+                <button mat-flat-button (click)="verifyCode()" class="ml-4" color="green"> Confirm </button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div *ngIf="errorState" class="card-footer alert alert-danger text-center">
+        <span class="err-msg"> {{errorMessage}} </span>
+    </div>
+
+</div>
+
+<div id="recaptcha-container"></div>

@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()"> menu </mat-icon>
+        </button>
+        <span class="ml-3"> <strong> {{apptitle}} </strong> </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav">
+        <mat-nav-list>
+            <mat-list-item *ngFor="let menu of menuList" (click)="selectedItem(menu.link); sidenav.toggle()">
+                <mat-icon mat-list-icon> {{menu.icon}} </mat-icon>
+                <span mat-line> {{menu.name}} </span>
+            </mat-list-item>
+
+            <mat-list-item *ngIf="!isAdminAuth" (click)="adminAuth(); sidenav.toggle()">
+                <mat-icon mat-list-icon> boss </mat-icon>
+                <span mat-line> Admin </span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet> </router-outlet>
+</mat-sidenav-container>
